@@ -20,7 +20,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v6.0.2
-      
+
+      - shell: cmd
+        run: |
+          curl https://imagemagick.org/archive/binaries/ImageMagick-7.1.2-18-portable-Q16-HDRI-x64.7z -L -O -J &&^
+          7z x ImageMagick-7.1.2-18-portable-Q16-HDRI-x64.7z -o ImageMagick-7.1.2-18-portable-Q16-HDRI-x64
+          
       - name: Archive Release
         uses: thedoctor0/zip-release@master
         with:
