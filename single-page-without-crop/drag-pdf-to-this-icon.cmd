@@ -7,6 +7,6 @@ set "filename_with_extension=%~nx1"
 set "filename=%~n1"
 
 echo Splitting the pdf "%filename_with_extension%" &&^
-magick.exe -density 300 -colorspace sRGB "%~f1[68]" "%filename%_split_137.jpg" &&^
+magick.exe -density 300 -colorspace sRGB "%~f1[68]" -quality 100 "%filename%_split_137.jpg" &&^
 echo DONE &&^
 pause
