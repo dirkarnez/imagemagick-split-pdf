@@ -25,6 +25,10 @@ jobs:
         run: |
           curl https://imagemagick.org/archive/binaries/ImageMagick-7.1.2-18-portable-Q16-HDRI-x64.7z -L -O -J &&^
           7z x ImageMagick-7.1.2-18-portable-Q16-HDRI-x64.7z -o"ImageMagick-7.1.2-18-portable-Q16-HDRI-x64"
+
+      - shell: cmd
+        run: |
+          dir /S
           
       - name: Archive Release
         uses: thedoctor0/zip-release@master
