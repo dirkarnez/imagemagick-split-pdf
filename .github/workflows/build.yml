@@ -28,13 +28,14 @@ jobs:
 
       - shell: cmd
         run: |
+          del /S ImageMagick-7.1.2-18-portable-Q16-HDRI-x64.7z &&^
+          rmdir /S /Q .git &&^
           dir /S
           
       - name: Archive Release
         uses: thedoctor0/zip-release@master
         with:
           type: 'zip'
-          path: ${{ github.event.repository.name }}*
           filename: "${{ github.event.repository.name }}-${{ github.ref_name }}-${{ matrix.os }}.zip"
           
       - name: Release prebuilt
